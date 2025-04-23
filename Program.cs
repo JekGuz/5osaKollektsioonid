@@ -160,7 +160,16 @@ namespace _5osaKollektsioonid
             double keskmine = (double)summa / loomad.Count; // double - дробь т.к. сумму возрастов делим на количество животных (5)
             Console.WriteLine($"Keskmine vanus: {keskmine}");
 
-
+            // самое старое животное
+            Loom vana = loomad[0];
+            foreach (Loom l in loomad)
+            {
+                if (l.Vanus > vana.Vanus)
+                {
+                    vana = l;
+                }
+            }
+            Console.WriteLine($"Vanim loom on: {vana.Nimi}, tema on {vana.Vanus} aastat vana");
 
 
             Console.WriteLine("Lõpetamiseks klõpsa (ENTER)");
