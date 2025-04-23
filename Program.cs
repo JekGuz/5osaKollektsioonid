@@ -116,6 +116,10 @@ namespace _5osaKollektsioonid
 
             // Регистр домашних животных
             Console.WriteLine("-----------------------------  Lemmikloomade register -------------------------------------------");
+            // начнем сделаем лист
+            List<Loom> loomad = new List<Loom>();
+            // через for собирем записи (примерно 5)
+
 
 
             Console.WriteLine("Lõpetamiseks klõpsa (ENTER)");
