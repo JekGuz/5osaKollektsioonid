@@ -139,6 +139,17 @@ namespace _5osaKollektsioonid
                 loomad.Add(l);
             }
 
+            // покажем всех введеных кошек
+            Console.WriteLine("Kõik kassid: ");
+            // перебираем
+            foreach (Loom l in loomad)
+            {
+                if (l.Liik.ToLower() == "kass") // проходили ToLower (маленькие буквы)
+                {
+                    Console.WriteLine($"{l.Nimi}, vanus: {l.Vanus}");
+                }
+            }
+
 
             Console.WriteLine("Lõpetamiseks klõpsa (ENTER)");
             Console.ReadLine();
