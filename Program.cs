@@ -150,6 +150,18 @@ namespace _5osaKollektsioonid
                 }
             }
 
+            // средний возраст
+            int summa = 0;
+            foreach (Loom l in loomad)
+            {
+                summa += l.Vanus;
+            }
+
+            double keskmine = (double)summa / loomad.Count; // double - дробь т.к. сумму возрастов делим на количество животных (5)
+            Console.WriteLine($"Keskmine vanus: {keskmine}");
+
+
+
 
             Console.WriteLine("Lõpetamiseks klõpsa (ENTER)");
             Console.ReadLine();
