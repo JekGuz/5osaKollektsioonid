@@ -10,11 +10,7 @@ namespace _5osaKollektsioonid
     internal class Program
     {
         static void Main(string[] args)
-        {
-
-
-
-
+        {            
             // Array - одного типа данные
             Console.WriteLine("----------------------------- ArrayList -------------------------------------------");
             ArrayList nimed = new ArrayList();
@@ -51,7 +47,7 @@ namespace _5osaKollektsioonid
             d.dicti();
 
 
-            // Список фильмов - 
+            // Список фильмов
             List<Film> filmid = new List<Film>()
             {
                 new Film() { Pealkiri = "Pride and Prejudice", Aasta = 2005, Zanr = "Draama" },
@@ -88,7 +84,7 @@ namespace _5osaKollektsioonid
             Console.WriteLine($"Uusim film: {uusim.Pealkiri} ({uusim.Aasta})");
 
             // 3. Группируем по жанру
-            Console.WriteLine("------------------------Grupeerivad filmid žanrite kaupa------------------------");
+            Console.WriteLine("------------------------ Grupeerivad filmid žanrite kaupa ------------------------");
             Dictionary<string, List<Film>> grupeeritud = new Dictionary<string, List<Film>>();
 
             foreach (Film f in filmid)
@@ -108,6 +104,20 @@ namespace _5osaKollektsioonid
                     Console.WriteLine($" - {f.Pealkiri}({f.Aasta})");
             }
 
+            // Статистика массива чисел
+            Console.WriteLine("-----------------------------  Arvude massiivi statistika -------------------------------------------");
+            Console.WriteLine("Sisesta arvud (tühikuga):");
+            string sisend = Console.ReadLine();
+
+            Statistika s = new Statistika();
+            double[] m = s.arvud(sisend);
+            Console.WriteLine("Arvutame statistikat...");
+            s.kuva(m);
+
+
+
+            Console.WriteLine("Lõpetamiseks klõpsa (ENTER)");
+            Console.ReadLine();
         }
     }
 }
