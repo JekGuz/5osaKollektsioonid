@@ -114,6 +114,8 @@ namespace _5osaKollektsioonid
             Console.WriteLine("Arvutame statistikat...");
             s.kuva(m);
 
+            // Регистр домашних животных
+            Console.WriteLine("-----------------------------  Lemmikloomade register -------------------------------------------");
 
 
             Console.WriteLine("Lõpetamiseks klõpsa (ENTER)");
