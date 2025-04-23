@@ -119,7 +119,25 @@ namespace _5osaKollektsioonid
             // начнем сделаем лист
             List<Loom> loomad = new List<Loom>();
             // через for собирем записи (примерно 5)
+            // на нужно имя, вид, возраст все по очареди спросим
+            for (int i = 0; i < 5; i++)
+            {
+                Console.WriteLine("Sisesta looma nimi: ");
+                string nimi = Console.ReadLine();
 
+                Console.WriteLine("Sisesta looma liik (kass/koer): ");
+                string liik = Console.ReadLine();
+
+                Console.WriteLine("Sisesta looma vanus: ");
+                int vanus = int.Parse(Console.ReadLine()); //Parse() — это метод, который преобразует текст в число (int).
+
+                // запишим в loom сначала получили данные этого животного в конце запишим
+                Loom l = new Loom();
+                l.Nimi = nimi;
+                l.Liik = liik;
+                l.Vanus = vanus;
+                loomad.Add(l);
+            }
 
 
             Console.WriteLine("Lõpetamiseks klõpsa (ENTER)");
