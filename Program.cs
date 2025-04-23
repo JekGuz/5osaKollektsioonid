@@ -10,7 +10,7 @@ namespace _5osaKollektsioonid
     internal class Program
     {
         static void Main(string[] args)
-        {            
+        {
             // Array - одного типа данные
             Console.WriteLine("----------------------------- ArrayList -------------------------------------------");
             ArrayList nimed = new ArrayList();
@@ -131,6 +131,8 @@ namespace _5osaKollektsioonid
                 Console.WriteLine("Sisesta looma vanus: ");
                 int vanus = int.Parse(Console.ReadLine()); //Parse() — это метод, который преобразует текст в число (int).
 
+                Console.WriteLine("-----------------------");
+
                 // запишим в loom сначала получили данные этого животного в конце запишим
                 Loom l = new Loom();
                 l.Nimi = nimi;
@@ -146,7 +148,7 @@ namespace _5osaKollektsioonid
             {
                 if (l.Liik.ToLower() == "kass") // проходили ToLower (маленькие буквы)
                 {
-                    Console.WriteLine($"{l.Nimi}, vanus: {l.Vanus}");
+                    Console.WriteLine($"Kass: {l.Nimi}, vanus: {l.Vanus}");
                 }
             }
 
@@ -169,10 +171,29 @@ namespace _5osaKollektsioonid
                     vana = l;
                 }
             }
-            Console.WriteLine($"Vanim loom on: {vana.Nimi}, tema on {vana.Vanus} aastat vana");
+            Console.WriteLine($"Vanim loom on: {vana.Nimi}, talle on {vana.Vanus} aastat vana");
+
+            //Ищим животное по имени            
+            Console.WriteLine("Sisesta looma nimi, keda otsida: ");
+            string otsi = Console.ReadLine();
+
+            bool leitud = false;  // bool - логический тип данных true / false
+            foreach (Loom l in loomad)
+            {
+                if (l.Nimi.ToLower() == otsi.ToLower())
+                {
+                    Console.WriteLine($"Leitud: {l.Nimi}, {l.Liik}, {l.Vanus} aastat");
+                    leitud = true;
+                    break;
+                }
+            }
+            if (leitud == false)
+            {
+                Console.WriteLine("Sellist looma ei ole.");
+            }
 
 
-            Console.WriteLine("Lõpetamiseks klõpsa (ENTER)");
+            Console.WriteLine("\nProgrammi lõpp – vajuta ENTER...");
             Console.ReadLine();
         }
     }
